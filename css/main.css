@@ -1,0 +1,99 @@
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* propiedades del padre */
+/* grid no tiene estilos por defecto */
+.padre{
+    height: 800px;
+    display: grid;
+    /*propiedad para trabajar columnas */
+    grid-template-columns: 0.5fr 1fr 3fr 1fr; /*indico que hay 2 columnas, de 150 y de 350*/
+    /*propiedad para trabajar filas */
+    grid-template-rows: 20% 60% 20%; /*indico que hay 2 filas y que miden 200 y 400 px*/
+    /*grid en general se trabaja en % o fracciones*/
+    gap: 10px;
+}
+
+/* propiedades de los hijos */
+.hijoUno{
+    background-color: BlueViolet;
+}
+
+.hijoDos{
+    background-color: violet;
+}
+
+.hijoTres{
+    background-color: salmon;
+}
+
+.hijoCuatro{
+    background-color: lightskyblue;
+}
+
+/*Padre de ejemplo 2*/
+.ejemplo{
+    height: 500px;
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    justify-items: center;
+    align-items: center;
+}
+
+/*propiedades de los hijos ejemplo 2*/
+/*self no respecta la alineacion del padre*/
+.imagen-1{
+    background-color: cornflowerblue;
+    justify-self: end;
+    align-self: end;
+}
+
+/*ultimo ejemplo*/
+
+/*propiedades del padre*/
+.contenedor{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr ;
+    /*sirve para trabajar las areas de mi html. Header, main, section, footer*/
+    /*se trabaja desde el padre y los hijos*/
+    grid-template-areas: 
+        "header header header"  /*la cantidad de palabras  se debe respetar en las proximas filas*/
+        "pepito pepito section"
+        "footer footer footer"
+    ;
+}
+
+/*propiedades de los hijos*/
+header{
+    grid-area: header;
+    background-color: crimson;
+    display: flex;
+}
+
+main{
+    grid-area: pepito;
+    background-color: red;
+}
+
+section{
+    grid-area: section;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    grid-area: footer;
+    background-color: yellow;
+}
+
+
